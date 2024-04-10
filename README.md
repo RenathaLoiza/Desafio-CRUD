@@ -107,3 +107,19 @@ function DeleteContato() {
 }
 ~~~
 Por fim, a **função DeleteContato()** permite excluir um contato da agenda, solicitando ao usuário que informe o email do contato a ser removido.
+~~~js
+Copy code
+ function DeleteContato() {
+        const emailDelete = prompt("Informe o email para deletar o contato!")
+        const indiceDelete = arryAgenda.findIndex(email => email.emailContato === emailDelete)
+
+        const confirmacao = window.confirm(`Você deseja mesmo excluir o contato ${emailDelete}`)
+        
+
+        if (confirmacao) {
+            arryAgenda.splice(indiceDelete, 1)
+        }
+
+        alert("Usuário deletado com sucesso!")
+      }
+~~~
