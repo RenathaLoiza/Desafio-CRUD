@@ -3,7 +3,7 @@
 
 Este projeto consiste em uma aplicação web simples para gerenciar uma agenda de contatos, permitindo a realização das operações **CRUD (Create, Read, Update, Delete)** em uma lista de contatos.
 
-Funcionalidades
+### Funcionalidades
 A aplicação oferece as seguintes funcionalidades:
 
 **Cadastro de Pessoa:**
@@ -67,9 +67,10 @@ const ListPessoa = () => {
     console.log(listPessoa);
     alert("*****Lista de usuários*****" + listPessoa);
 }
-A função ListPessoa() lista todos os contatos cadastrados na agenda, exibindo seus nomes, números de telefone, emails e datas de cadastro.
+~~~
+A **função ListPessoa()**  lista todos os contatos cadastrados na agenda, exibindo seus nomes, números de telefone, emails e datas de cadastro.
 
-javascript
+~~~js 
 Copy code
 function UpdatePessoas() {
     let  atualizarDados =parseInt(prompt(`qual das opçoes você deseja atualizar
