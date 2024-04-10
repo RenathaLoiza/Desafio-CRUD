@@ -47,7 +47,7 @@ O código JavaScript acima define a **função Menu()** que exibe um menu de op�
 ~~~js
 Copy code
 function AddPessoa() {
-    const nomeContato= prompt("Digitar nome do novo contado");
+    const nomeContato= prompt("Digitar nome do novo contato");
     const numeroContato= prompt("Digitar número do novo contato");
     const emailContato= prompt("Digitar email do cantato");
     const dataAtual = new Date().toLocaleDateString();
