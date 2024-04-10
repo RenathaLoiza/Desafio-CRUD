@@ -11,11 +11,11 @@
 
         function Menu() {
             return parseInt(prompt(`cadastrando telefone e email ao seus contatos
-            1- Cadastro Pessoa
-            2- Pessoas Agenda
-            3- Atualizar Pessoas
-            4- Deletar pessoas
-            5- sair do menu
+            1- Cadastro novo contato
+            2- Visualizar contatos
+            3- Atualizar Contato
+            4- Deletar contato
+            5- Sair do menu
             `));
         }
 
@@ -24,11 +24,15 @@
 
         function AddPessoa() {
             const nomeContato= prompt("Digitar nome do novo contado");
-            const numeroContato= prompt("Digitar número do novo contato");
+            const numeroContato= parseInt(prompt("Digitar número do novo contato"));
             const emailContato= prompt("Digitar email do cantato");
             const dataAtual = new Date().toLocaleDateString();
-            
-            arryAgenda.push({nomeContato,numeroContato,emailContato,dataAtual});
+            const dia = new Date()
+            const horaAtual=dia.getHours();
+            const minutos=dia.getMinutes();
+            const segundos=dia.getSeconds();
+            const formatada= horaAtual+":"+minutos+":"+segundos
+            arryAgenda.push({nomeContato,numeroContato,emailContato,dataAtual,formatada});
 
             console.log(arryAgenda);
         }
@@ -38,10 +42,10 @@
                 let listPessoa = "";
             arryAgenda.forEach((dataUser) =>{
            listPessoa += `
-           Nome: ${dataUser.nomeContato}, Telefone: ${dataUser.numeroContato}, Email: ${dataUser.emailContato}, Data: ${dataUser.dataAtual}`;});
+           Nome: ${dataUser.nomeContato}, Telefone: ${dataUser.numeroContato}, Email: ${dataUser.emailContato}, Data: ${dataUser.dataAtual} Hora: ${dataUser.formatada} `;});
 
         console.log(listPessoa);
-        alert("*****Lista de usuários*****" + listPessoa);
+        alert("***** Lista de contatos *****" + listPessoa);
         
             }
         // ATUALIZAR
@@ -76,7 +80,7 @@
                     
                     break;
             case 2:
-                const findTelefone = prompt("Infome telefone para atualizar")
+                const findTelefone = parseInt(prompt("Infome telefone para atualizar"));
                 const telefoneEncontrado = arryAgenda.find((user) => user.numeroContato === findTelefone);
             if (!telefoneEncontrado) {
                 alert("Usuário não foi encontrado!");
@@ -107,10 +111,10 @@
       //DELETAR
 
       function DeleteContato() {
-        const emailDelete = prompt("Informe o email para realizar o delete!")
+        const emailDelete = prompt("Informe o email para deletar o contato!")
         const indiceDelete = arryAgenda.findIndex(email => email.emailContato === emailDelete)
 
-        const confirmacao = window.confirm(`Você deseja mesmo excluir o usuário ${emailDelete}`)
+        const confirmacao = window.confirm(`Você deseja mesmo excluir o contato ${emailDelete}`)
         
 
         if (confirmacao) {
