@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Agenda</title>
+</head>
+<body>
+    <script>
+        let arryAgenda=[]
+
+        function Menu() {
+            return parseInt(prompt(`cadastrando telefone e email ao seus contatos
+            1- Cadastro Pessoa
+            2- Pessoas Agenda
+            3- Atualizar Pessoas
+            4- Deletar pessoas
+            5- sair do menu
+            `));
+        }
+
+        //ADICIONAR
+       
+
+        function AddPessoa() {
+            const nomeContato= prompt("Digitar nome do novo contado");
+            const numeroContato= prompt("Digitar número do novo contato");
+            const emailContato= prompt("Digitar email do cantato");
+            const dataAtual = new Date().toLocaleDateString();
+            
+            arryAgenda.push({nomeContato,numeroContato,emailContato,dataAtual});
+
+            console.log(arryAgenda);
+        }
+        
+        //LISTAR
+            const ListPessoa = () => {
+                let listPessoa = "";
+            arryAgenda.forEach((dataUser) =>{
+           listPessoa += `
+           Nome: ${dataUser.nomeContato}, Telefone: ${dataUser.numeroContato}, Email: ${dataUser.emailContato}, Data: ${dataUser.dataAtual}`;});
+
+        console.log(listPessoa);
+        alert("*****Lista de usuários*****" + listPessoa);
+        
+            }
+        // ATUALIZAR
+
+        function UpdatePessoas() {
+            let  atualizarDados =parseInt(prompt(`qual das opçoes você deseja atualizar
+            1-E-mail
+            2-Telefone
+            3- Voltar para o menu anterior`));
+        let atualizarContatos = true;
+     while (atualizarContatos) {
+        switch (atualizarDados) {
+            case 1:
+                const findEmail = prompt("Infome email para atualizar")
+                const emailEncontrado = arryAgenda.find((user) => user.emailContato === findEmail);
+                if (!emailEncontrado) {
+                    alert("Usuário não foi encontrado!");
+                    return ;
+                }
+                   
+                    const novoEmail = prompt("Informe o novo email: ");
+                    const novoNomeUsuario = prompt("Informe o nome do usuário: ");
+                    novoEmail ? (emailEncontrado.emailContato = novoEmail) : null;
+
+                    if (novoNomeUsuario) {
+                        emailEncontrado.nomeContato = novoNomeUsuario;
+                        alert("Usuário foi atualizado com sucesso!");
+                        return;
+                    }
+
+                     
+                    
+                    break;
+            case 2:
+                const findTelefone = prompt("Infome telefone para atualizar")
+                const telefoneEncontrado = arryAgenda.find((user) => user.numeroContato === findTelefone);
+            if (!telefoneEncontrado) {
+                alert("Usuário não foi encontrado!");
+                return;
+            } 
+                    const novoTelefone = prompt("Informe o novo Telefone: ");
+                    const novoNomeUsuario1 = prompt("Informe o nome do usuário: ");
+                    novoTelefone ? (telefoneEncontrado.numeroContato = novoTelefone) : null;
+                    if (novoNomeUsuario1) {
+                    telefoneEncontrado.nomeContato = novoNomeUsuario1;
+                    alert("Usuário foi atualizado com sucesso!");
+                    return;
+            }
+            case 3:
+            atualizarContatos=false
+                Menu()
+                break;
+                
+            break;
+            
+                default:
+                    alert("opção invalida");
+                    break;
+        }
+    } 
+ 
+}   
+      //DELETAR
+
+      function DeleteContato() {
+        const emailDelete = prompt("Informe o email para realizar o delete!")
+        const indiceDelete = arryAgenda.findIndex(email => email.emailContato === emailDelete)
+
+        const confirmacao = window.confirm(`Você deseja mesmo excluir o usuário ${emailDelete}`)
+        
+
+        if (confirmacao) {
+            arryAgenda.splice(indiceDelete, 1)
+        }
+
+        alert("Usuário deletado com sucesso!")
+      }
+       
+      let opcoes = true;
+    while (opcoes) {
+        
+        switch (Menu()) {
+            case 1:
+                AddPessoa();
+                break;
+            case 2:
+                ListPessoa();
+                break;
+            case 3:
+                UpdatePessoas()
+                break;
+            case 4:
+               DeleteContato()
+                break;
+            case 5:
+               opcoes = false;
+              alert("Saindo do programa, até mais!")
+          break;
+        default:
+             alert("Opção inválida! Tente novamente")
+          break;
+        }
+    }
+    </script>
+    
+</body>
+</html>
