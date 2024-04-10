@@ -10,7 +10,7 @@
         let arryAgenda=[]
 
         function Menu() {
-            return parseInt(prompt(`cadastrando telefone e email ao seus contatos
+            return parseInt(prompt(`Cadastrando telefone e email ao seus contatos
             1- Cadastro novo contato
             2- Visualizar contatos
             3- Atualizar Contato
@@ -23,7 +23,7 @@
        
 
         function AddPessoa() {
-            const nomeContato= prompt("Digitar nome do novo contado");
+            const nomeContato= prompt("Digitar nome do novo contato");
             const numeroContato= parseInt(prompt("Digitar número do novo contato"));
             const emailContato= prompt("Digitar email do cantato");
             const dataAtual = new Date().toLocaleDateString();
@@ -51,15 +51,15 @@
         // ATUALIZAR
 
         function UpdatePessoas() {
-            let  atualizarDados =parseInt(prompt(`qual das opçoes você deseja atualizar
-            1-E-mail
-            2-Telefone
-            3- Voltar para o menu anterior`));
+            let  atualizarDados =parseInt(prompt(`Qual das opçoes você deseja atualizar
+            1- E-mail
+            2- Telefone
+            3- Voltar para o MENU anterior`));
         let atualizarContatos = true;
      while (atualizarContatos) {
         switch (atualizarDados) {
             case 1:
-                const findEmail = prompt("Infome email para atualizar")
+                const findEmail = prompt("Infome o email para atualizar")
                 const emailEncontrado = arryAgenda.find((user) => user.emailContato === findEmail);
                 if (!emailEncontrado) {
                     alert("Usuário não foi encontrado!");
