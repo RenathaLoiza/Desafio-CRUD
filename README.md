@@ -1,28 +1,33 @@
-# Desafio-CRUD
+# Desafio-CRUD- Agenda de contatos
 
-CRUD Agenda
-Este projeto consiste em uma aplicação web simples para gerenciar uma agenda de contatos, permitindo a realização das operações CRUD (Create, Read, Update, Delete) em uma lista de contatos.
+
+Este projeto consiste em uma aplicação web simples para gerenciar uma agenda de contatos, permitindo a realização das operações **CRUD (Create, Read, Update, Delete)** em uma lista de contatos.
 
 Funcionalidades
 A aplicação oferece as seguintes funcionalidades:
 
-Cadastro de Pessoa: Adicionar novos contatos informando nome, número de telefone e email.
+**Cadastro de Pessoa:**
+Adicionar novos contatos informando nome, número de telefone e email.
 Listagem de Pessoas: Exibir a lista de contatos cadastrados.
-Atualização de Pessoas: Atualizar informações de um contato existente, como email ou número de telefone.
-Exclusão de Pessoas: Remover um contato da agenda.
-Sair do Menu: Encerrar a execução da aplicação.
-Como Usar
+Atualização de Pessoas:
+Atualizar informações de um contato existente, como email ou número de telefone.
+**Exclusão de Pessoas:**
+Remover um contato da agenda.
+**Sair do Menu:**
+Encerrar a execução da aplicação.
+**Como Usar**
 Para utilizar a aplicação, basta seguir estes passos:
 
-Abra o arquivo index.html em um navegador web.
+Abra o arquivo html em um navegador web.
 Ao abrir a aplicação, um menu será exibido com as opções disponíveis.
 Escolha a opção desejada digitando o número correspondente.
 Siga as instruções para cada operação conforme solicitado.
 Detalhes da Implementação
-javascript
+~~~js
 Copy code
 let arryAgenda=[]
-
+~~~
+~~~js
 function Menu() {
     return parseInt(prompt(`cadastrando telefone e email ao seus contatos
     1- Cadastro Pessoa
@@ -32,9 +37,10 @@ function Menu() {
     5- sair do menu
     `));
 }
-O código JavaScript acima define a função Menu() que exibe um menu de opções para o usuário, permitindo escolher entre as diferentes operações disponíveis.
+~~~
+O código JavaScript acima define a **função Menu()** que exibe um menu de opções para o usuário, permitindo escolher entre as diferentes operações disponíveis.
 
-javascript
+~~~js
 Copy code
 function AddPessoa() {
     const nomeContato= prompt("Digitar nome do novo contado");
@@ -46,9 +52,10 @@ function AddPessoa() {
 
     console.log(arryAgenda);
 }
-A função AddPessoa() é responsável por adicionar um novo contato à agenda, solicitando ao usuário que insira o nome, número de telefone e email do contato.
+~~~
+A **função AddPessoa()** é responsável por adicionar um novo contato à agenda, solicitando ao usuário que insira o nome, número de telefone e email do contato.
 
-javascript
+~~~js
 Copy code
 const ListPessoa = () => {
     let listPessoa = "";
@@ -76,9 +83,10 @@ while (atualizarContatos) {
     }
 } 
 }
-A função UpdatePessoas() permite ao usuário atualizar as informações de um contato existente na agenda, como email ou número de telefone.
+~~~
+A **função UpdatePessoas()** permite ao usuário atualizar as informações de um contato existente na agenda, como email ou número de telefone.
 
-javascript
+~~~js
 Copy code
 function DeleteContato() {
     const emailDelete = prompt("Informe o email para realizar o delete!")
@@ -92,4 +100,5 @@ function DeleteContato() {
 
     alert("Usuário deletado com sucesso!")
 }
-Por fim, a função DeleteContato() permite excluir um contato da agenda, solicitando ao usuário que informe o email do contato a ser removido.
+~~~
+Por fim, a **função DeleteContato()** permite excluir um contato da agenda, solicitando ao usuário que informe o email do contato a ser removido.
