@@ -42,7 +42,11 @@
                 let listPessoa = "";
             arryAgenda.forEach((dataUser) =>{
            listPessoa += `
-           Nome: ${dataUser.nomeContato}, Telefone: ${dataUser.numeroContato}, Email: ${dataUser.emailContato}, Data: ${dataUser.dataAtual} Hora: ${dataUser.formatada} `;});
+           Nome: ${dataUser.nomeContato} 
+           Telefone: ${dataUser.numeroContato} 
+           Email: ${dataUser.emailContato} 
+           Data: ${dataUser.dataAtual} 
+           Hora: ${dataUser.formatada} `;});
 
         console.log(listPessoa);
         alert("***** Lista de contatos *****" + listPessoa);
