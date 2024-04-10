@@ -33,13 +33,13 @@ let arryAgenda=[]
 ~~~
 ~~~js
 function Menu() {
-    return parseInt(prompt(`cadastrando telefone e email ao seus contatos
-    1- Cadastro Pessoa
-    2- Pessoas Agenda
-    3- Atualizar Pessoas
-    4- Deletar pessoas
-    5- sair do menu
-    `));
+     return parseInt(prompt(`cadastrando telefone e email ao seus contatos
+            1- Cadastro novo contato
+            2- Visualizar contatos
+            3- Atualizar Contato
+            4- Deletar contato
+            5- Sair do menu
+            `));
 }
 ~~~
 O código JavaScript acima define a **função Menu()** que exibe um menu de opções para o usuário, permitindo escolher entre as diferentes operações disponíveis.
