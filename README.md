@@ -32,6 +32,7 @@ Copy code
 let arryAgenda=[]
 ~~~
 ~~~js
+copy code
 function Menu() {
      return parseInt(prompt(`cadastrando telefone e email ao seus contatos
             1- Cadastro novo contato
