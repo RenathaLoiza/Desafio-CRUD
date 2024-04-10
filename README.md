@@ -8,8 +8,9 @@ A aplicação oferece as seguintes funcionalidades:
 
 **Cadastro de Pessoa:**
 Adicionar novos contatos informando nome, número de telefone e email.
-Listagem de Pessoas: Exibir a lista de contatos cadastrados.
-Atualização de Pessoas:
+**Listagem de Pessoas:** 
+Exibir a lista de contatos cadastrados.
+**Atualização de Pessoas:**
 Atualizar informações de um contato existente, como email ou número de telefone.
 **Exclusão de Pessoas:**
 Remover um contato da agenda.
@@ -22,7 +23,7 @@ Abra o arquivo html em um navegador web.
 Ao abrir a aplicação, um menu será exibido com as opções disponíveis.
 Escolha a opção desejada digitando o número correspondente.
 Siga as instruções para cada operação conforme solicitado.
-Detalhes da Implementação
+**Detalhes da Implementação**
 ~~~js
 Copy code
 let arryAgenda=[]
